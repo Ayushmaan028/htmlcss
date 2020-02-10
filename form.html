@@ -1,0 +1,46 @@
+<html>
+<head>
+<script>
+function validateForm() {
+    var name=document.forms["FormVal"]["Name"];
+    var pass=document.forms["FormVal"]["Password"];
+    var regex = /^[A-Za-z0-9 ]+$/;
+    
+    
+    if(name==null || name=="")
+    {
+        alert("Please enter your name") ;
+        return false;
+    }
+    else if(name.length<2)
+        {
+            alert("Name length should be between 2 to 30 characters");
+            
+            return false;
+        }
+    else if(name.contains(regex))
+        {
+            window.alert("Name contains numbers and special chars");
+            name.focus();
+            return false;
+        }
+ 
+    if(pass.length==<6)
+        {
+            alert("Password cannot be empty");
+            return false;
+        }
+  }
+</script>
+</head>
+<body>
+
+<form name="FormVal" action="Formval.html" onsubmit="return validateForm()" method="post">
+  Name: <input type="text" name="Name"><br>
+  Password : <input type="password" name="Password">
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

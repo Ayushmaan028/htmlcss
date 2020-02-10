@@ -1,0 +1,46 @@
+<html>
+    <head><title>Email Validation</title>
+    </head>
+<script>  
+function validateemail()  
+{  
+var x=document.myform.email.value;
+var password=document.myform.password.value;
+var lowerCase=/[a-z]/g;
+var upperCase=/[A-Z]/g;
+var digits=/[0-9]/g;
+
+  if (x==null || x==""){  
+  alert("E-mail address cannot be blank!");  
+  return false;  
+  }
+  else if (password==null || password==""){  
+  alert("Password cannot be blank!");  
+  return false;  
+  }
+    
+ else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  } 
+    else if(!password.match(lowerCase)){
+        alert("Password has no lower case value");
+    }
+        else if(!password.match(upperCase)){
+        alert("Password has no Upper case value");
+    }
+        else if(!password.match(digits)){
+        alert("Password has no digits");
+    }
+    return true;
+
+}  
+</script>  
+<body>  
+<form name="myform"  method="post"  onsubmit="return validateemail();">  
+Email: <input type="text" name="email">
+Password: <input type="password" name="password"><br><br>
+<input type="submit" value="register">  
+</form>  
+</body>
+</html>
